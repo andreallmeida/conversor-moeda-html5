@@ -4,7 +4,6 @@
 		<title>Conversor de Moedas</title>
 		<meta charset="utf-8" />
 		
-		
 		<script>
 			// Tag criada para inserção de código Java Script
 			// tendo uma confirmação antes da navegação.
@@ -15,11 +14,49 @@
 				}
 			}
 			
+			// Essa função faz com que seja executado logo após o carregamento da página
+			window.onload = function(){
+				chamarAPI();
+			}
+			
+			// Rotina para chamada da API
+			function chamarAPI(){
+				const endpoint = "https://api.exchangeratesapi.io/latest";
+				var request = new XMLHttpRequest();
+				request.addEventListener("load", respostaAPI);
+				request.open("GET", endpoint);
+				request.send();
+			}
+			
+			// Função que será executada no CALLBACK do metodo SEND
+			function respostaAPI(){
+				console.log(this);
+				
+				// Converte o RESPONSE em formato de objeto
+				var oResposta = JSON.parse(this.responseText);
+				var url = new URL(location.href);
+				
+				// Busca os parametros de URL
+				var sMoedaOrigem = url.searchParams.get("origem");
+				var sMoedaDestino = url.searchParams.get("destino");
+				
+				// Identifica o valor baseado na Moeda Informada
+				var fValor = oResposta.rates[sMoedaDestino];
+				
+				//Usando QuerySelector, identificaremos o valor pelo ID do campo (SPAM) e modifica seu conteúdo
+				document.querySelector("#valor_destino").innerText = fValor;
+				document.querySelector("#moeda_destino").innerText = sMoedaDestino;
+			}
+			
 		</script>
 		
 	</head>
 	<body>
-		<h1>O Resultado é...</h1>
+		<h1>O Resultado é:</h1>
+		<p>
+			1 EUR é igual a
+			<span id="valor_destino">X</span> <span id="moeda_destino">BRL</span>
+		</p>
 		
 		<button type="button" onclick="voltar()">
 			Voltar
