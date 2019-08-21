@@ -43,7 +43,8 @@
 				// Identifica o valor baseado na Moeda Informada
 				var fValor = oResposta.rates[sMoedaDestino];
 				
-				//Usando QuerySelector, identificaremos o valor pelo ID do campo (SPAM) e modifica seu conteúdo
+				//Usando QuerySelector, identificaremos o valor pelo ID do 
+				//campo (SPAM) e modifica seu conteúdo
 				document.querySelector("#valor_destino").innerText = fValor;
 				document.querySelector("#moeda_destino").innerText = sMoedaDestino;
 			}
