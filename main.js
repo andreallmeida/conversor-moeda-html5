@@ -13,7 +13,7 @@ function onInit() {
 function chamarAPI() {
 
 	var dDate = $("#data_cotacao").val();
-	var cEndPoint = "https://api.exchangeratesapi.io";
+	var cEndPoint = "/api";
 	var sSulfix;
 
 	// Verifica se a data foi informada para montagem da URL
