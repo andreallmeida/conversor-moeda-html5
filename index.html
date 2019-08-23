@@ -24,7 +24,12 @@
 				<label for="moeda_destino">Moeda Destino:</label>
 				<input class="form-control" type="text" id="moeda_destino" name="destino" required
 		    		maxlength="3" value="BRL">     		
-			</div>	    		
+			</div>
+			<div>
+				<label for="data_cotacao">Data Cotação:</label>
+				<input type="date" id="data_cotacao" name="data_cotacao" required>     						
+			</div>
+			<br>
 			
 			<!--<input type="submit" value="Converter" formmethod="get">-->
 			<button type="button" onclick="chamarAPI()" class="btn btn-primary">Converter</button>
@@ -36,12 +41,14 @@
 		    <tr>
 		      <th scope="col">Valor</th>
 		      <th scope="col">Moeda</th>
+		      <th scope="col">Data</th>
 		    </tr>
 		  </thead>
 		  <tbody>
 		    <tr>
 		      <td><span id="valor_destino_resultado"></span></td>
 		      <td><span id="moeda_destino_resultado"></span></td>
+		      <td><span id="data_cotacao_resultado"></span></td>
 		    </tr>
 		  </tbody>
 		</table>
@@ -53,6 +60,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     	<script src="main.js"> </script>
+    	<body onload="onInit()">
 	</body>
 
 </html>
