@@ -13,14 +13,14 @@ function onInit() {
 function chamarAPI() {
 
 	var dDate = $("#data_cotacao").val();
-	var cEndPoint = "/api";
+	var cEndPoint = "api/";
 	var sSulfix;
 
 	// Verifica se a data foi informada para montagem da URL
 	if (dDate === null || dDate === "") {
-		sSulfix = "/latest";
+		sSulfix = "latest";
 	} else {
-		sSulfix = "/" + dDate;
+		sSulfix = dDate;
 
 	}
 
