@@ -21,7 +21,6 @@ function chamarAPI() {
 		sSulfix = "latest";
 	} else {
 		sSulfix = dDate;
-
 	}
 
 	// Monta a URL Final para chamada de serviço
