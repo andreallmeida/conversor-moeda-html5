@@ -5,7 +5,7 @@ ovly.conversor = {
 	chamarAPI: function () {
 
 		var dDate = $("#data_cotacao").val();
-		var cEndPoint = "api/";
+		var cEndPoint = "/api/";
 		var sSulfix;
 
 		// Verifica se a data foi informada para montagem da URL
